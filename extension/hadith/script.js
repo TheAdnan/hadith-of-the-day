@@ -21,7 +21,7 @@ function loadJSON(path, success, error)
 
 loadJSON('data/bukhari.json',
          function(data) { 
-         	
+         	console.log(JSON.parse(data))
           },
          function(xhr) { 
          	return; 

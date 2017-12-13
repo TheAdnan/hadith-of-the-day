@@ -31,7 +31,7 @@ for url_range in range(1, book_number):
         hit = str(hit)
         hit.replace("<p>", " ")
         hit.replace("</p>", " ")
-        result = {counter: hit}
+        result = {int(counter): hit}
         with open(hadithFolder + "/bukhari.json", 'a+') as outfile:
             json.dump(result, outfile)
 print("Finished scraping")
