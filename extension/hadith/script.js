@@ -20,8 +20,17 @@ function loadJSON(path, success, error)
 }
 
 loadJSON('data/bukhari.json',
-         function(data) { 
-         	console.log(JSON.parse(data))
+         function(data) {
+            var ahadith = [];
+         	var result = JSON.parse(data);
+         	var size = Object.keys(result).length;
+         	for(var i = 0; i < size; i++)
+                if (typeof result[i] !== 'undefined') {
+                    ahadith.push(result[i]);
+                }
+
+            var hadith = ahadith[Math.floor(Math.random()*ahadith.length)];
+            console.log(hadith)
           },
          function(xhr) { 
          	return; 

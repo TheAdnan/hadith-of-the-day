@@ -1,7 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib
 import os
-import sys
 import requests
 import json
 
@@ -18,6 +16,7 @@ data = r.text
 supaPocetna = BeautifulSoup(data, "html.parser")
 book_number = 98
 counter = 0
+dict = {}
 
 for url_range in range(1, book_number):
     urls = main_url + str(url_range) + ".html"
@@ -31,7 +30,8 @@ for url_range in range(1, book_number):
         hit = str(hit)
         hit.replace("<p>", " ")
         hit.replace("</p>", " ")
-        result = {int(counter): hit}
-        with open(hadithFolder + "/bukhari.json", 'a+') as outfile:
-            json.dump(result, outfile)
+        dict.update({counter: hit})
+with open(hadithFolder + "/bukhari.json", 'w') as outfile:
+    json.dump(dict, outfile)
+
 print("Finished scraping")
