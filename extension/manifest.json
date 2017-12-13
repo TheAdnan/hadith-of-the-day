@@ -1,0 +1,26 @@
+{
+
+  "manifest_version": 2,
+  "name": "Hadith of the day",
+  "version": "1.0",
+
+  "description": "Hadith of the day in your Firefox browser",
+
+  "icons": {
+    "48": "icons/hadith-48.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs"
+      ],
+
+  "browser_action": {
+    "default_icon": "icons/hadith-48.png",
+    "default_title": "Hadith of the day",
+    "default_popup": "hadith/index.html"
+  },
+
+  "web_accessible_resources": ["hadith/*.json"]
+
+}

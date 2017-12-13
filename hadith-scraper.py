@@ -6,7 +6,7 @@ import requests
 import json
 
 dir = os.path.dirname(os.path.abspath(__file__))
-hadithFolder = dir + "/hadith-scraped"
+hadithFolder = dir + "/extension/hadith/data"
 
 if not os.path.exists(hadithFolder):
     os.makedirs(hadithFolder)
