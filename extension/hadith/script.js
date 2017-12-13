@@ -19,20 +19,51 @@ function loadJSON(path, success, error)
     xhr.send();
 }
 
-loadJSON('data/bukhari.json',
+function loadHadithJSON(){
+    loadJSON('data/bukhari.json',
          function(data) {
+            localStorage.setItem("hadith", data);
             var ahadith = [];
-         	var result = JSON.parse(data);
-         	var size = Object.keys(result).length;
-         	for(var i = 0; i < size; i++)
+            var result = JSON.parse(data);
+            var size = Object.keys(result).length;
+            for(var i = 0; i < size; i++)
                 if (typeof result[i] !== 'undefined') {
                     ahadith.push(result[i]);
                 }
-
             var hadith = ahadith[Math.floor(Math.random()*ahadith.length)];
-            console.log(hadith)
+            hadith = hadith.replace("()", "(s.a.w.s.)");
+            hadith = hadith.replace("( )", "(s.a.w.s.)");
+            $("#hadith").innerHTML = hadith;
           },
          function(xhr) { 
-         	return; 
+            return; 
          }
-);
+    );
+}
+
+
+
+function loadDataFromLocalStorage(){
+    if(localStorage.getItem("hadith") === null){
+        loadHadithJSON();
+    }
+    else{
+        var ahadith = [];
+        var result = JSON.parse(localStorage.getItem("hadith"));
+        var size = Object.keys(result).length;
+        for(var i = 0; i < size; i++)
+            if (typeof result[i] !== 'undefined') {
+                ahadith.push(result[i]);
+            }
+        var hadith = ahadith[Math.floor(Math.random()*ahadith.length)];
+        hadith = hadith.replace("()", "(s.a.w.s.)");
+        hadith = hadith.replace("( )", "(s.a.w.s.)");
+        $("#hadith").innerHTML += hadith;
+     }  
+}
+
+window.onload = function(){
+    loadDataFromLocalStorage();
+}
+
+
