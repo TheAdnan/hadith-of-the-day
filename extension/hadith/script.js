@@ -1,5 +1,9 @@
 $ = (queryString) => document.querySelector(queryString);
 
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
 function loadJSON(path, success, error)
 {
     var xhr = new XMLHttpRequest();
@@ -44,7 +48,7 @@ function loadHadithJSON(){
 
 
 function loadDataFromLocalStorage(){
-    if(localStorage.getItem("hadith") === null){
+    if(isEmpty(localStorage)){
         loadHadithJSON();
     }
     else{
