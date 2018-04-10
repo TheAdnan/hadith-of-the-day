@@ -33,7 +33,7 @@ function loadHadithJSON(){
             var hadith = ahadith[Math.floor(Math.random()*ahadith.length)];
             hadith = hadith.replace("()", "(s.a.w.s.)");
             hadith = hadith.replace("( )", "(s.a.w.s.)");
-            $("#hadith").innerHTML = hadith;
+            $("#hadith").appendChild(document.createTextNode(hadith));
           },
          function(xhr) { 
             return; 
@@ -58,12 +58,12 @@ function loadDataFromLocalStorage(){
         var hadith = ahadith[Math.floor(Math.random()*ahadith.length)];
         hadith = hadith.replace("()", "(s.a.w.s.)");
         hadith = hadith.replace("( )", "(s.a.w.s.)");
-        $("#hadith").innerHTML += hadith;
+        $("#hadith").appendChild(document.createTextNode(hadith));
      }  
 }
 
 window.onload = function(){
     loadDataFromLocalStorage();
-}
+};
 
 
