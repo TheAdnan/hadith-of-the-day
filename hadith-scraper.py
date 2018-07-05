@@ -9,7 +9,7 @@ hadithFolder = dir + "/extension/hadith/data"
 if not os.path.exists(hadithFolder):
     os.makedirs(hadithFolder)
 
-main_url = "http://localhost/hadith-of-the-day/hadith/books/bukhari/"
+main_url = "http://localhost/addons/hadith-of-the-day/hadith/books/bukhari/"
 print("Started scraping")
 r = requests.get(main_url)
 data = r.text

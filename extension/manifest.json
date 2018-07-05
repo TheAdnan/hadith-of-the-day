@@ -1,25 +1,18 @@
 {
-
   "manifest_version": 2,
   "name": "Hadith of the day",
-  "version": "1.1",
-
+  "version": "1.2",
   "description": "Daily Hadith in your Firefox browser",
-
   "icons": {
     "48": "icons/hadith-48.png"
   },
-
   "permissions": [
     "storage"
       ],
-
   "browser_action": {
     "default_icon": "icons/hadith-48.png",
     "default_title": "Hadith of the day",
     "default_popup": "hadith/index.html"
   },
-
-  "web_accessible_resources": ["hadith/data/*.json"]
-
+  "web_accessible_resources": ["hadith/data/bukhari.json"]
 }
