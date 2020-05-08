@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Hadith of the day",
   "version": "1.2",
-  "description": "Daily Hadith addon in your Firefox browser",
+  "description": "Daily Hadith extension in your Firefox browser",
   "icons": {
     "48": "icons/hadith-48.png"
   },
