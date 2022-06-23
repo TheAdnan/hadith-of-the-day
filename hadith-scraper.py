@@ -34,4 +34,4 @@ for url_range in range(1, book_number):
 with open(hadithFolder + "/bukhari.json", 'w') as outfile:
     json.dump(dict, outfile)
 
-print("Finished scraping")
+print("Finished scraping!")
