@@ -3,6 +3,6 @@ biopython==1.70
 certifi==2017.11.5
 chardet==3.0.4
 idna==2.6
-numpy==1.13.3
+numpy==1.22.0
 requests==2.20.0
 urllib3==1.24.2
